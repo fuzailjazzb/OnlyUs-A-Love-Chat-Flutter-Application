@@ -1,0 +1,57 @@
+name: love_chat_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.7.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase dependencies (compatible versions)
+  firebase_core: ^3.5.0
+  cloud_firestore: ^5.4.0
+  firebase_auth: ^5.3.1
+  firebase_storage: ^12.3.0
+
+  # File and image handling
+  image_picker: ^1.1.2
+  file_picker: ^8.1.4
+
+  # LiveKit + WebRTC (compatible and web-stable versions)
+  flutter_webrtc: 0.9.40
+  livekit_client: 1.4.2
+
+  # Utilities and UI
+  google_fonts: ^6.2.1
+  http: ^1.2.2
+  characters: ^1.4.0
+  connectivity_plus: ^4.0.2
+  device_info_plus: ^9.0.0
+  material_color_utilities: ^0.11.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: NotoSansDevanagari
+      fonts:
+        - asset: assets/fonts/NotoSansDevanagari-Regular.ttf
+    - family: NotoNaskhArabic
+      fonts:
+        - asset: assets/fonts/NotoNaskhArabic-Regular.ttf
+
+# Force compatible lower-level packages to avoid JS/HTML mismatches
+dependency_overrides:
+  flutter_webrtc: 0.9.40
+  livekit_client: 1.4.2
+  js: 0.6.7
+  js_bindings: 0.1.1
+  web: 0.4.2

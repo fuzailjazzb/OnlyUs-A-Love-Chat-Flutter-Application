@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  livekit:
+    image: livekit/livekit-server:latest
+    container_name: livekit-server
+    command: >
+      --bind 0.0.0.0:7880
+      --rtc 0.0.0.0:7881
+      --node-ip 0.0.0.0
+      --api-key devkey                # ⚡ same key jaisa tum server.js me rakhoge
+      --api-secret secret             # ⚡ same secret
+      --log-level debug
+    ports:
+      - "7880:7880"  # Websocket / API
+      - "7881:7881"  # RTC (WebRTC traffic)
+
+  token-server:
+    build: ./server   # yaha tum server.js rakho aur Dockerfile bhi
+    container_name: livekit-token-server
+    ports:
+      - "3000:3000"
+    environment:
+      - LIVEKIT_API_KEY=devkey
+      - LIVEKIT_SECRET=secret
+      - LIVEKIT_HOST=ws://livekit:7880
+    depends_on:
+      - livekit
