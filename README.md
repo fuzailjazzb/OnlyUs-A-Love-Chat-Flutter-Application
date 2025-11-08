@@ -36,7 +36,7 @@ Built with love and simplicity â€” connect, chat, and share emotions securely ðŸ
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/love_chat_app.git
+[git clone (https://github.com/fuzailjazzb/OnlyUs-A-Love-Chat-Flutter-Application
 cd love_chat_app
 2. Install Dependencies
 bash
@@ -102,4 +102,5 @@ Copy code
    git add README.md
    git commit -m "Added professional README file"
    git push
+
 
